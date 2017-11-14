@@ -38,7 +38,7 @@
     CookieStore.prototype.getItem = function (name) {
         return name ? this.__get(name) : null;
     };
-    
+
     CookieStore.prototype.setItem = function (name, value) {
         if(!name) { return; }
         document.cookie = escape(name) + "=" + escape(value) + this.expireDate;
@@ -49,7 +49,7 @@
         document.cookie = escape(name) + this.expireDate;
     };
 
-    CookieStore.prototype.__get = function (name) {
+    CookieStore.prototype.__get = function (keyName) {
         var index;
         for (var name in this.objectStore) {
             index = this.keys.indexOf(name);
@@ -71,7 +71,7 @@
                 this.keys.push(key);
             }
         }
-        return this.objectStore[name];
+        return this.objectStore[keyName];
     };
 
     scope.StorageService = new StorageService();
