@@ -1,7 +1,7 @@
 (function (scope) {
     var StorageService = function () {
-        this.localStorage = this.isSupported('localStorage') && false ? window.localStorage : new CookieStore();
-        this.sessionStorage = this.isSupported('sessionStorage') && false ? window.sessionStorage : new MemoryStore();
+        this.localStorage = this.isSupported('localStorage') ? window.localStorage : new CookieStore();
+        this.sessionStorage = this.isSupported('sessionStorage') ? window.sessionStorage : new MemoryStore();
     };
 
     StorageService.prototype.isSupported = function (type) {
@@ -29,9 +29,10 @@
         delete this.store[name];
     };
 
-    var CookieStore = function () {
+    var CookieStore = function (nonSpa) {
         this.keys = [];
         this.objectStore = {};
+        this.expireDate = nonSpa ? "path=/" : "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
     };
 
     CookieStore.prototype.getItem = function (name) {
@@ -40,12 +41,12 @@
     
     CookieStore.prototype.setItem = function (name, value) {
         if(!name) { return; }
-        document.cookie = escape(name) + "=" + escape(value) + "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+        document.cookie = escape(name) + "=" + escape(value) + this.expireDate;
     };
 
     CookieStore.prototype.removeItem = function (name) {
         if(!name) { return; }
-        document.cookie = escape(name) + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/";
+        document.cookie = escape(name) + this.expireDate;
     };
 
     CookieStore.prototype.__get = function (name) {
