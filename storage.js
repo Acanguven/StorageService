@@ -32,7 +32,7 @@
     var CookieStore = function (nonSpa) {
         this.keys = [];
         this.objectStore = {};
-        this.expireDate = nonSpa ? "path=/" : "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+        this.expireDate = nonSpa ? "; path=/" : "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
     };
 
     CookieStore.prototype.getItem = function (name) {
