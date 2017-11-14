@@ -1,7 +1,7 @@
 # StorageService
-📦 Provides localStorage and sessionStorage features for unsupported devices and private mode browsing of Safari.
+📦 Provides `localStorage` and `sessionStorage` features for unsupported devices and private mode browsing of Safari.
 
-If storage type is not supported or disabled(Safari private browsing) creates in memory store for sessionStorage and cookie store for localStorage. Designed to use with single page applications.
+If storage type is not supported or disabled(Safari private browsing) creates in memory store for `sessionStorage` and cookie store for `localStorage`. Designed to use with single page applications.
 
 If you want to use it with non SPA apps, just change this line. MemoryStore() -> CookieStore(true)
 ```javascript
