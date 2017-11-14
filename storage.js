@@ -32,6 +32,7 @@
     var CookieStore = function (isSessionStorage) {
         this.objectStore = {};
         this.expireDate = isSessionStorage ? "; path=/" : "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+        this.updateObject();
     };
 
     CookieStore.prototype.getItem = function (name) {
