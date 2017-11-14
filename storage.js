@@ -29,9 +29,9 @@
         delete this.store[name];
     };
 
-    var CookieStore = function (nonSpa) {
+    var CookieStore = function (isSessionStorage) {
         this.objectStore = {};
-        this.expireDate = nonSpa ? "; path=/" : "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
+        this.expireDate = isSessionStorage ? "; path=/" : "; expires=Tue, 19 Jan 2038 03:14:07 GMT; path=/";
     };
 
     CookieStore.prototype.getItem = function (name) {
