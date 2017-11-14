@@ -1,5 +1,5 @@
-# privateStorageService
-Provides localStorage and sessionStorage features for unsupported devices and private mode browsing of Safari
+# StorageService
+📦 Provides localStorage and sessionStorage features for unsupported devices and private mode browsing of Safari.
 
 If storage type is not supported or disabled(Safari private browsing) creates in memory store for sessionStorage and cookie store for localStorage. Designed to use with single page applications.
 
