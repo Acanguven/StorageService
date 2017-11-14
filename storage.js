@@ -35,7 +35,7 @@
     };
 
     CookieStore.prototype.getItem = function (name) {
-        return name ? this.objectStore[name] : null;
+        return this.objectStore[name] || null;
     };
 
     CookieStore.prototype.setItem = function (name, value) {
