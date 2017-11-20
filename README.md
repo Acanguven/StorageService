@@ -7,11 +7,11 @@
 - Mozilla all versions
 - Yandex all versions
 
-If storage type is not supported or disabled(Safari private browsing) creates in memory store for `sessionStorage` and cookie store for `localStorage`. Designed to use with single page applications.
+If storage type is not supported or disabled(Safari private browsing) creates in memory store for `sessionStorage` and cookie store for `localStorage`. 
 
-If you want to use it with non SPA apps, just change this line. MemoryStore() -> CookieStore(true)
+If you want to use in memory storage just change the line to.
 ```javascript
-this.sessionStorage = this.isSupported('sessionStorage') ? window.sessionStorage : new CookieStore(true);
+this.sessionStorage = this.isSupported('sessionStorage') ? window.sessionStorage : new MemoryStore();
 ```
 ## LocalStorage
 - `window.StorageService.localStorage.getItem(name);`
