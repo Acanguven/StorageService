@@ -14,11 +14,11 @@ If you want to use it with non SPA apps, just change this line. MemoryStore() ->
 this.sessionStorage = this.isSupported('sessionStorage') ? window.sessionStorage : new CookieStore(true);
 ```
 ## LocalStorage
-- `window.Storage.localStorage.getItem(name);`
-- `window.Storage.localStorage.setItem(name, value);`
-- `window.Storage.localStorage.removeItem(name);`
+- `window.StorageService.localStorage.getItem(name);`
+- `window.StorageService.localStorage.setItem(name, value);`
+- `window.StorageService.localStorage.removeItem(name);`
 
 ## SessionStorage
-- `window.Storage.sessionStorage.getItem(name);`
-- `window.Storage.sessionStorage.setItem(name, value);`
-- `window.Storage.sessionStorage.removeItem(name);`
+- `window.StorageService.sessionStorage.getItem(name);`
+- `window.StorageService.sessionStorage.setItem(name, value);`
+- `window.StorageService.sessionStorage.removeItem(name);`
